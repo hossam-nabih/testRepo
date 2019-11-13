@@ -1,0 +1,1385 @@
+<div  ng-if="!kayanLang || kayanLang == 'en'" style="min-height: 100vh; background-color: #F8F8F8;">
+ 
+
+        <div  style="position: relative;" class="coverDefault">     
+                
+                 
+                  
+        </div>
+        <div ng-if="view == 1"  class="row">
+                <div class="pr-5 my-3 mt-2 text-right ml-auto">
+                        <h3 class="ml-auto text-right"> 
+                                <span style="font-size: 22px;" class="text-muted my-3">choose request status   </span>
+                                <button   style="border-radius: 10px; height: 50px; line-height: 1; padding-left: 20px; padding-right: 20px; " class="default-button  "  data-toggle="modal" data-target="#exampleModalCenter">
+                                        <span ng-if="requestDetails.status == 1">
+                                                Pending
+                                        </span>
+                                        <span ng-if="requestDetails.status == 2">
+                                                Rejected
+                                        </span>
+                                        <span ng-if="requestDetails.status == 3">
+                                                Accepted
+                                        </span>
+                                        <span ng-if="requestDetails.status == 4">
+                                                In Renting
+                                        </span>
+                                        <span ng-if="requestDetails.status == 5">
+                                                Finished
+                                        </span>
+                                </button>
+                        </h3>
+                </div>
+        </div>
+       
+
+        <div ng-if="view == 1"  class="container py-5">
+
+                <div>
+                        <div style="padding-top: 20px !important" class="row pt-3">
+                                <div class="text-justify col-sm-12 col-md-4  text-md-right text-sm-center">
+                                    <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                </div>
+                                <div class="col-sm-12 col-md-4 text-center">
+                                    <h2>
+                
+                                            Request Info 
+                                    </h2>
+                                </div>
+                                <div class="text-justify col-sm-12 col-md-4  text-md-left text-sm-center">
+                                    <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                </div>
+                            </div>
+    
+    
+                            <div class="row pt-5">
+        
+                                    <div class="col-md-8 col-sm-12">
+                                        
+                                        <div class="row py-3 text-center  m-auto">
+                                            <div class="col-sm-12 text-center m-auto">
+                                                <div class="row text-center m-auto pb-3">
+                                                <div class="col-sm-6 col-md-6 text-left">
+                                                        <div class="form-group">
+                                                            <h4 class="color70">Request Num</h4>
+                                                        </div>
+                            
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                            <div class="form-group  text-center">
+                                                                <h4 class="color70">"no request num"</h4>
+                                                            </div>
+                                
+                                                        </div>
+                                               
+                                                </div>
+                                                <div class="row text-center m-auto pb-3">
+                                                        <div class="col-sm-12 col-md-12 text-center">
+                                                                <div class="row pt-2 px-5">
+                                                                        <h3 style="font-size: 18px;"  class="text-left">
+                                                                                <span class="mr-3">
+                                                                                        <img src="http://134.209.178.237/kayanWebsite/images/calendar.png" alt="">
+                                                                                    </span>
+                                                                                    from
+                                                                                {{requestDetails.startDate | cmdate:'yyyy-MM-dd'}} 
+                                                                             <span class="px-5">to  </span>
+                                                                            {{requestDetails.endDate | cmdate:'yyyy-MM-dd'}} 
+                                                                        </h3>
+                                                                        
+                                                                </div>     
+                                                       
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                            </div>
+                            
+                                            <div class="row  pb-3">
+                                                    <div class="col-sm-12 col-md-12 text-center">
+                                                            <div class="row pt-2 ">
+                                                                    <div class="col-sm-6 col-md-6 text-left">
+                                                                            <div class="form-group">
+                                                                                <h4 class="color70">Total price</h4>
+                                                                            </div>
+                                                
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-md-6 text-center m-auto">
+                                                                                <div class="form-group text-center">
+                                                                                    <h4 class="color70">
+                                                                                            <input disabled type="text" style="width: 150px; background-color: #fff;" class="form-control m-auto text-center" value="{{requestDetails.price}}" placeholder="Total">
+                                                                                    </h4>
+                                                                                </div>
+                                                    
+                                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                   
+                                                    </div> 
+                            
+                                        </div>
+                                    </div>
+                        
+                        
+                                    
+                                    <div class="col-md-4 col-sm-12">
+                                       
+                                    </div>
+                            </div>
+                           
+                </div>
+           
+            <div>
+                    <div style="padding-top: 20px !important" class="row pt-3">
+                            <div class="text-justify col-sm-12 col-md-4  text-md-right text-sm-center">
+                                <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-4 text-center">
+                                <h2>
+            
+                                    User Info 
+                                </h2>
+                            </div>
+                            <div class="text-justify col-sm-12 col-md-4  text-md-left text-sm-center">
+                                <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                            </div>
+                        </div>
+
+
+                        <div class="row pt-5">
+    
+                                <div class="col-md-8 col-sm-12">
+                                    
+                                    <div class="row py-3 text-center  m-auto">
+                                        <div class="col-sm-12 text-center m-auto">
+                                            <div class="row text-center m-auto pb-3">
+                                            <div class="col-sm-6 col-md-6 text-left">
+                                                    <div class="form-group">
+                                                        <h4 class="color70">Client Name</h4>
+                                                    </div>
+                        
+                                                </div>
+                                                <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group  text-center">
+                                                            <h4 class="color70">
+                                                                    {{requestDetails.userID.fullname}}
+                                                            </h4>
+                                                        </div>
+                            
+                                                    </div>
+                                           
+                                            </div>
+                                            <div class="row text-center m-auto pb-3">
+                                                    <div class="col-sm-6 col-md-6 text-left">
+                                                            <div class="form-group">
+                                                                <h4 class="color70">Mobile</h4>
+                                                            </div>
+                                
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6">
+                                                                <div class="form-group text-center">
+                                                                    <h4 class="color70">{{requestDetails.userID.mobile}}</h4>
+                                                                </div>
+                                    
+                                                            </div>
+                                                   
+                                                    </div>
+                    
+                                                
+                                                    <div class="row text-center m-auto pb-3">
+                                                            <div class="col-sm-6 col-md-6 text-left">
+                                                                    <div class="form-group">
+                                                                        <h4 class="color70">Country</h4>
+                                                                    </div>
+                                        
+                                                                </div>
+                                                                <div class="col-sm-6 col-md-6">
+                                                                        <div class="form-group text-center">
+                                                                            <h4 class="color70"> {{requestDetails.userID.countryID.titleEN}}</h4>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                           
+                                                            </div>
+                    
+                                                            <div class="row text-center m-auto pb-3">
+                                                                    <div class="col-sm-6 col-md-6 text-left">
+                                                                            <div class="form-group">
+                                                                                <h4 class="color70">City</h4>
+                                                                            </div>
+                                                
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-md-6">
+                                                                                <div class="form-group text-center">
+                                                                                    <h4 class="color70"> {{requestDetails.userID.cityID.titleEN}}</h4>
+                                                                                </div>
+                                                    
+                                                                            </div>
+                                                                   
+                                                                    </div>
+                    
+                                                                    <div class="row text-center m-auto pb-3">
+                                                                            <div class="col-sm-6 col-md-6 text-left">
+                                                                                    <div class="form-group">
+                                                                                        <h4 class="color70">Gender</h4>
+                                                                                    </div>
+                                                        
+                                                                                </div>
+                                                                                <div class="col-sm-6 col-md-6">
+                                                                                        <div class="form-group text-center">
+                                                                                            <h4 class="color70">
+                                                                                                <span ng-if="requestDetails.userID.gender == 1">
+                                                                                                    Male
+                                                                                                </span>
+                                                                                                <span ng-if="requestDetails.userID.gender == 0">
+                                                                                                        Female
+                                                                                                    </span>
+                                                                                                    <span ng-if="(requestDetails.userID.gender != 0 && requestDetails.userID.gender != 1 )">
+                                                                                                            Not specified
+                                                                                                        </span>
+                                                                                            </h4>
+                                                                                        </div>
+                                                            
+                                                                                    </div>
+                                                                           
+                                                                            </div>
+                                            
+                                            
+                                        </div>
+                        
+                        
+                        
+                                    </div>
+                                </div>
+                    
+                    
+                                
+                                <div style="border-left: 1px solid #707070;" class="col-md-4 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-center m-auto">
+                                            
+                                            <div style="width: 100px; height: 100px; background-color: #000; position: relative; "
+                                                class="m-auto">
+                                                <img style="width: 100px; height: 100px;" id="d1" src="{{requestDetails.userID.personalImg}}" class="img-thumbnail" />
+                                                
+                            
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-md-left text-sm-left text-xs-center  m-auto pt-3 ">
+                                                Personal image
+                                            
+                                        </div>  
+                                    </div>
+                                    <div class="row  pt-3">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-center m-auto">
+                                                <div style="width: 100px; height: 100px; background-color: #000; position: relative; "
+                                                class="m-auto">
+                                                <img style="width: 100px; height: 100px;" id="d1" src="{{requestDetails.userID.licenseImg}}" class="img-thumbnail" />
+                                                
+                            
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-md-left text-sm-left text-xs-center m-auto pt-3 ">
+                                            
+                                            Driving license
+                                            
+                                        </div>  
+                                    </div>
+                                    <div class="row  pt-3">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-center m-auto">
+                                                <div style="width: 100px; height: 100px; background-color: #000; position: relative; "
+                                                class="m-auto">
+                                                <img style="width: 100px; height: 100px;" id="d1" src="{{requestDetails.userID.nationalIdImg}}" class="img-thumbnail" />
+                                                
+                            
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-md-left text-sm-left text-xs-center m-auto pt-3 ">
+                                        
+                                            Identification card
+                                        </div>  
+                                    </div>
+                                </div>
+                        </div>
+                       
+            </div>
+            
+            <div>
+                    <div style="padding-top: 20px !important" class="row pt-3">
+                            <div class="text-justify col-sm-12 col-md-4  text-md-right text-sm-center">
+                                <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-4 text-center">
+                                <h2>
+            
+                                    Car  Info 
+                                </h2>
+                            </div>
+                            <div class="text-justify col-sm-12 col-md-4  text-md-left text-sm-center">
+                                <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                            </div>
+                        </div>
+
+
+                        <div class="row pt-5">
+    
+                                <div class="col-md-8 col-sm-12">
+                                    
+                                    <div class="row py-3 text-center  m-auto">
+                                        <div class="col-sm-12 text-center m-auto">
+                                            <div class="row text-center m-auto pb-3">
+                                            <div class="col-sm-6 col-md-6 text-left">
+                                                    <div class="form-group">
+                                                        <h4 class="color70">Category </h4>
+                                                    </div>
+                        
+                                                </div>
+                                                <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group  text-center">
+                                                            <h4 class="color70">
+                                                               {{ requestDetails.carID.categoryID.titleEN}}
+                                                            </h4>
+                                                        </div>
+                            
+                                                    </div>
+                                           
+                                            </div>
+                                            <div class="row text-center m-auto pb-3">
+                                                    <div class="col-sm-6 col-md-6 text-left">
+                                                            <div class="form-group">
+                                                                <h4 class="color70">Sub Category </h4>
+                                                            </div>
+                                
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6">
+                                                                <div class="form-group text-center">
+                                                                    <h4 class="color70"> 
+                                                                        {{ requestDetails.carID.subCategoryID.titleEN}}</h4>
+                                                                </div>
+                                    
+                                                            </div>
+                                                   
+                                                    </div>
+                    
+                                                
+                                                    <div class="row text-center m-auto pb-3">
+                                                            <div class="col-sm-6 col-md-6 text-left">
+                                                                    <div class="form-group">
+                                                                        <h4 class="color70">Type</h4>
+                                                                    </div>
+                                        
+                                                                </div>
+                                                                <div class="col-sm-6 col-md-6">
+                                                                        <div class="form-group text-center">
+                                                                            <h4 class="color70">
+                                                                                    {{ requestDetails.carID.carTypeID.titleEN}}
+                                                                            </h4>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                           
+                                                            </div>
+                    
+                                                            <div class="row text-center m-auto pb-3">
+                                                                    <div class="col-sm-6 col-md-6 text-left">
+                                                                            <div class="form-group">
+                                                                                <h4 class="color70">Model </h4>
+                                                                            </div>
+                                                
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-md-6">
+                                                                                <div class="form-group text-center">
+                                                                                    <h4 class="color70">
+                                                                                            {{ requestDetails.carID.carModelID.titleEN}}
+                                                                                    </h4>
+                                                                                </div>
+                                                    
+                                                                            </div>
+                                                                   
+                                                                    </div>
+                    
+                                                                    <div class="row text-center m-auto pb-3">
+                                                                            <div class="col-sm-6 col-md-6 text-left">
+                                                                                    <div class="form-group">
+                                                                                        <h4 class="color70">Year</h4>
+                                                                                    </div>
+                                                        
+                                                                                </div>
+                                                                                <div class="col-sm-6 col-md-6">
+                                                                                        <div class="form-group text-center">
+                                                                                            <h4 class="color70">
+                                                                                                    {{ requestDetails.carID.carYearID.titleEN}}
+                                                                                            </h4>
+                                                                                        </div>
+                                                            
+                                                                                    </div>
+                                                                           
+                                                                            </div>
+                                                                            <div class="row text-center m-auto pb-3">
+                                                                                    <div class="col-sm-6 col-md-6 text-left">
+                                                                                            <div class="form-group">
+                                                                                                <h4 class="color70">Driver</h4>
+                                                                                            </div>
+                                                                
+                                                                                        </div>
+                                                                                        <div class="col-sm-6 col-md-6">
+                                                                                                <div class="form-group text-center">
+                                                                                                    <h4 class="color70">
+                                <span ng-if="requestDetails.carID.allowDriver == 1">
+                                    yes
+                                    </span>
+                                    <span ng-if="requestDetails.carID.allowDriver == 0">
+                                            no
+                                            </span>
+
+                                                                                                    </h4>
+                                                                                                </div>
+                                                                    
+                                                                                            </div>
+                                                                                   
+                                                                                    </div>
+                                                                                    <div class="row text-center m-auto pb-3">
+                                                                                            <div class="col-sm-6 col-md-6 text-left">
+                                                                                                    <div class="form-group">
+                                                                                                        <h4 class="color70">Automatic</h4>
+                                                                                                    </div>
+                                                                        
+                                                                                                </div>
+                                                                                                <div class="col-sm-6 col-md-6">
+                                                                                                        <div class="form-group text-center">
+                                                                                                            <h4 class="color70">
+
+                                                                                                                    <span ng-if="requestDetails.carID.automatic == 1">
+                                                                                                                            automatic
+                                                                                                                            </span>
+                                                                                                                            <span ng-if="requestDetails.carID.automatic == 0">
+                                                                                                                                    manual
+                                                                                                                                    </span>
+                                                                                                            </h4>
+                                                                                                        </div>
+                                                                            
+                                                                                                    </div>
+                                                                                           
+                                                                                            </div>
+                                            
+                                            
+                                        </div>
+                        
+                        
+                        
+                                    </div>
+                                </div>
+                    
+                    
+                                
+                                <div class="col-md-4 col-sm-12">
+                                  
+                                </div>
+                        </div>
+                       
+            </div>
+        </div>
+    
+        
+              <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+              <div class="modal-content">
+                <form ng-submit="editCar()">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">choose request status</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    
+                    <div ng-if="requestDetails.status == 1" class="row text-center m-auto  pb-3">
+                        <span 
+                            type="text" 
+                            class="form-control text-center custom-input" 
+                            id="selectRequestOption3" 
+                            placeholder="Accepted "
+                            value="Accepted"
+                            autocomplete="off"
+                            disabled
+                            ng-click="selectRequestOption(3)"
+                            >
+                            Accepted
+                        </span>
+            
+                    </div>
+                    <div  ng-if="requestDetails.status == 1" class="row text-center m-auto  pb-3">
+                            <span 
+                            type="text" 
+                            class="form-control text-center custom-input selectRequestOption" 
+                            id="selectRequestOption2" 
+                            placeholder="reject "
+                            autocomplete="off"
+                            value="reject"
+                            disabled
+                            ng-click="selectRequestOption(2)"
+                            >
+                            reject
+                        </span>
+                    </div>
+                    <div  ng-if="requestDetails.status != 1" class="row text-center m-auto  pb-3">
+                            <span 
+                            type="text" 
+                            class="form-control text-center custom-input selectRequestOption" 
+                            id="selectRequestOption10" 
+                            placeholder="car Ready "
+                            autocomplete="off"
+                            value="car Ready"
+                            disabled
+                            ng-click="selectRequestOption(10)"
+                            >
+                            car Ready
+                            </span>
+        
+                    </div>
+                    <div  ng-if="requestDetails.status != 1" class="row text-center m-auto  pb-3">
+                            <span 
+                            type="text" 
+                            class="form-control text-center custom-input selectRequestOption" 
+                            id="selectRequestOption4" 
+                            placeholder="Start Rent "
+                            autocomplete="off"
+                            value="Start Rent"
+                            disabled
+                            ng-click="selectRequestOption(4)"
+                            >
+                            Start Rent
+                        </span>
+        
+                    </div>
+                    <div  ng-if="requestDetails.status != 1" class="row text-center m-auto  pb-3">
+                            <span 
+                            type="text" 
+                            class="form-control text-center custom-input selectRequestOption" 
+                            id="selectRequestOption5" 
+                            placeholder="get car "
+                            autocomplete="off"
+                            value="get car"
+                            disabled
+                            ng-click="selectRequestOption(5)"
+                            >
+                            get car
+                        </span>
+        
+                    </div>
+                    </div>
+                    <div class="modal-footer m-auto d-block" style=" border: none;">
+                        <div class="row  text-center">
+                            <button ng-click="updateRequest(currentRequestStatus)"  type="button" style="border-radius: 50px; height: 45px; line-height: 1; padding-left: 30px; padding-right: 30px; font-size: 18px;" class="default-button2 m-auto text-center">
+                                    Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-if="!view || (view && view != 1)"  style="margin-top: -50px;"  class="container">
+                <div class="row">
+                        <div  ng-repeat="c in pendingRequests track by $index" class="col-md-6 col-sm-12 px-2 my-2">
+                            <div  style="background-color: #fff;border-radius: 6px; cursor: pointer; "  ng-click="getRequestDetails(c._id)" class="px-2"  >
+                                    <div class="row m-auto text-center">
+                                        <span style="background-color: #fff ; cursor: pointer; text-align: center; font-weight: bold; height: 50px; color: #000;line-height: 2.25;" class="text-center m-auto"   type="text" >
+                                            {{c.carID.categoryID.titleEN}} - {{c.carID.carTypeID.titleEN}} - {{c.carID.carModelID.titleEN}}  
+                                        </span>
+                                    </div>
+                                    <div class="row  m-auto text-right">
+                                        <span style="background-color: #fff ; cursor: pointer; text-align: center; height: 20px; font-size: 14px; color: #000;line-height: 2.25;" class="text-center ml-auto"   type="text" >
+                                           Request #01258
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div  class="col-sm-3"> 
+                                            <div class="m-auto text-center " style="width: 100%; position: relative; display: block; width: 100%;">
+                                                    <img  style="width: 100px; height: 100px;" class="img-thumbnail  mb-3" src="{{c.carID.logo || c.carID.img1 || c.carID.img2}}" alt="">
+                                                   
+                                            </div>
+                                        
+                                        </div>
+                                        <div  class="col-sm-4 align-middle"> 
+                                            <div class="py-4">
+                                                    <h5>{{c.userID.fullname}}</h5>     
+                                                    <h5>{{c.userID.mobile}}</h5>                
+                                            </div>
+                                                                                   
+                                            
+                                        
+                                        </div>
+                                        <div  class="col-sm-5"> 
+                                                <div ng-if="c.status == 1" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                        <input disabled value="pending" style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                </div>
+                                                <div ng-if="c.status == 2" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                        <input disabled value="rejected " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                </div>
+                                                <div ng-if="c.status == 3" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                        <input disabled value="accepted " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                </div>
+                                                <div ng-if="c.status == 4" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                        <input disabled value="in Rent " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                </div>
+                                           
+                                                <div ng-if="c.status == 5" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                        <input disabled value="finished " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                        box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="row pb-2 pt-2">
+                                        
+                                            <div class="col-sm-1">
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                    <h3 style="font-size: 18px;"  class="text-left">
+                                                            <span class="mr-3">
+                                                                    <img src="http://134.209.178.237/kayanWebsite/images/calendar.png" alt="">
+                                                                </span>
+                                                        from {{c.startDate | cmdate:'yyyy-MM-dd'}} 
+                                                    </h3>
+                                                </div>
+
+                                        
+                                         
+                                    </div>
+                                    <div class="row pb-4 ">
+                                        
+                                            <div class="col-sm-1">
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                    <h3 style="font-size: 18px; border-bottom: 1 px solid #707070;"  class="text-left pl-5 d-block w-100">to 
+                                                            {{c.endDate | cmdate:'yyyy-MM-dd'}} 
+                                                        </h3> 
+                                                </div>
+
+                                        
+                                            
+                                    </div>
+                            </div>
+                            
+                           
+                        </div>
+    
+                       
+                    </div>
+        </div>
+
+    </div>
+    
+    <div  ng-if="kayanLang == 'ar'" style="min-height: 100vh; background-color: #F8F8F8;">
+ 
+
+            <div  style="position: relative;" class="coverDefault">     
+                    
+                     
+                      
+            </div>
+            <div ng-if="view == 1"  class="row">
+                    <div class="pr-5 my-3 mt-2 text-left mr-auto">
+                            <h3 class="ml-auto text-right"> 
+                                    <span style="font-size: 22px;" class="text-muted my-3">    اختر حالة الطلب    </span>
+                                    <button   style="border-radius: 10px; height: 50px; line-height: 1; padding-left: 20px;  margin-left: 40px; padding-right: 20px; " class="default-button  "  data-toggle="modal" data-target="#exampleModalCenter">
+                                            <span ng-if="requestDetails.status == 1">
+                                                    معلق
+                                            </span>
+                                            <span ng-if="requestDetails.status == 2">
+                                                    مرفوض
+                                            </span>
+                                            <span ng-if="requestDetails.status == 3">
+                                                    موافقة
+                                            </span>
+                                            <span ng-if="requestDetails.status == 4">
+                                                    فى الايجار 
+                                            </span>
+                                            <span ng-if="requestDetails.status == 5">
+                                                    تم الانتهاء
+                                            </span>
+                                    </button>
+                            </h3>
+                    </div>
+            </div>
+           
+    
+            <div ng-if="view == 1"  class="container py-5">
+    
+                    <div>
+                            <div style="padding-top: 20px !important" class="row pt-3">
+                                    <div class="text-justify col-sm-12 col-md-4  text-md-left text-sm-center">
+                                        <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 text-center">
+                                        <h2>
+                    
+                                                تفــاصيل الطـلـب 
+                                        </h2>
+                                    </div>
+                                    <div class="text-justify col-sm-12 col-md-4  text-md-right text-sm-center">
+                                        <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                    </div>
+                                </div>
+        
+        
+                                <div class="row pt-5">
+            
+                                        <div class="col-md-8 col-sm-12">
+                                            
+                                            <div class="row py-3 text-center  m-auto">
+                                                <div class="col-sm-12 text-center m-auto">
+                                                    <div class="row text-center m-auto pb-3">
+                                                    <div class="col-sm-6 col-md-6 text-right">
+                                                            <div class="form-group">
+                                                                <h4 class="color70">رقـم الطـلب </h4>
+                                                            </div>
+                                
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6">
+                                                                <div class="form-group  text-center">
+                                                                    <h4 class="color70">"لا يوجد  رقم "</h4>
+                                                                </div>
+                                    
+                                                            </div>
+                                                   
+                                                    </div>
+                                                    <div class="row text-center m-auto pb-3">
+                                                            <div class="col-sm-12 col-md-12 text-center">
+                                                                    <div class="row pt-2 px-5">
+                                                                            <h3 style="font-size: 18px;"  class="text-left">
+                                                                                    <span class="mr-3">
+                                                                                            <img src="http://134.209.178.237/kayanWebsite/images/calendar.png" alt="">
+                                                                                        </span>
+                                                                               من 
+                                                                                    {{requestDetails.startDate | cmdate:'yyyy-MM-dd'}} 
+                                                                                 <span class="px-5">الى  </span>
+                                                                                {{requestDetails.endDate | cmdate:'yyyy-MM-dd'}} 
+                                                                            </h3>
+                                                                            
+                                                                    </div>     
+                                                           
+                                                            </div>
+                                                            <div class="clearfix"></div>
+    
+                                                </div>
+                                
+                                                <div class="row  pb-3">
+                                                        <div class="col-sm-12 col-md-12 text-center">
+                                                                <div class="row pt-2 ">
+                                                                        <div class="col-sm-6 col-md-6 text-right">
+                                                                                <div class="form-group">
+                                                                                    <h4 class="color70">السعر الأجمالى</h4>
+                                                                                </div>
+                                                    
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-6 text-center m-auto">
+                                                                                    <div class="form-group text-center">
+                                                                                        <h4 class="color70">
+                                                                                                <input disabled type="text" style="width: 150px; background-color: #fff;" class="form-control m-auto text-center" value="{{requestDetails.price}}" placeholder="Total">
+                                                                                        </h4>
+                                                                                    </div>
+                                                        
+                                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                       
+                                                        </div> 
+                                
+                                            </div>
+                                        </div>
+                            
+                            
+                                        
+                                        <div class="col-md-4 col-sm-12">
+                                           
+                                        </div>
+                                </div>
+                               
+                    </div>
+               
+                <div>
+                        <div style="padding-top: 20px !important" class="row pt-3">
+                                <div class="text-justify col-sm-12 col-md-4  text-md-left text-sm-center">
+                                    <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                </div>
+                                <div class="col-sm-12 col-md-4 text-center">
+                                    <h2>
+                
+                                        بيانـات العمـيل 
+                                    </h2>
+                                </div>
+                                <div class="text-justify col-sm-12 col-md-4  text-md-right text-sm-center">
+                                    <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                </div>
+                            </div>
+    
+    
+                            <div class="row pt-5">
+        
+                                    <div class="col-md-8 col-sm-12">
+                                        
+                                        <div class="row py-3 text-center  m-auto">
+                                            <div class="col-sm-12 text-center m-auto">
+                                                <div class="row text-center m-auto pb-3">
+                                                <div class="col-sm-6 col-md-6 text-right">
+                                                        <div class="form-group">
+                                                            <h4 class="color70">أسـم العـميل</h4>
+                                                        </div>
+                            
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                            <div class="form-group  text-center">
+                                                                <h4 class="color70">
+                                                                        {{requestDetails.userID.fullname}}
+                                                                </h4>
+                                                            </div>
+                                
+                                                        </div>
+                                               
+                                                </div>
+                                                <div class="row text-center m-auto pb-3">
+                                                        <div class="col-sm-6 col-md-6 text-right">
+                                                                <div class="form-group">
+                                                                    <h4 class="color70">رقم الجوال</h4>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-6">
+                                                                    <div class="form-group text-center">
+                                                                        <h4 class="color70">{{requestDetails.userID.mobile}}</h4>
+                                                                    </div>
+                                        
+                                                                </div>
+                                                       
+                                                        </div>
+                        
+                                                    
+                                                        <div class="row text-center m-auto pb-3">
+                                                                <div class="col-sm-6 col-md-6 text-right">
+                                                                        <div class="form-group">
+                                                                            <h4 class="color70">البلد</h4>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                                    <div class="col-sm-6 col-md-6">
+                                                                            <div class="form-group text-center">
+                                                                                <h4 class="color70"> {{requestDetails.userID.countryID.titleEN}}</h4>
+                                                                            </div>
+                                                
+                                                                        </div>
+                                                               
+                                                                </div>
+                        
+                                                                <div class="row text-center m-auto pb-3">
+                                                                        <div class="col-sm-6 col-md-6 text-right">
+                                                                                <div class="form-group">
+                                                                                    <h4 class="color70">المدينة</h4>
+                                                                                </div>
+                                                    
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-6">
+                                                                                    <div class="form-group text-center">
+                                                                                        <h4 class="color70"> {{requestDetails.userID.cityID.titleEN}}</h4>
+                                                                                    </div>
+                                                        
+                                                                                </div>
+                                                                       
+                                                                        </div>
+                        
+                                                                        <div class="row text-center m-auto pb-3">
+                                                                                <div class="col-sm-6 col-md-6 text-right">
+                                                                                        <div class="form-group">
+                                                                                            <h4 class="color70">الجنس</h4>
+                                                                                        </div>
+                                                            
+                                                                                    </div>
+                                                                                    <div class="col-sm-6 col-md-6">
+                                                                                            <div class="form-group text-center">
+                                                                                                <h4 class="color70">
+                                                                                                    <span ng-if="requestDetails.userID.gender == 1">
+                                                                                                        ذكر 
+                                                                                                    </span>
+                                                                                                    <span ng-if="requestDetails.userID.gender == 0">
+                                                                                                            أنثى 
+                                                                                                        </span>
+                                                                                                        <span ng-if="(requestDetails.userID.gender != 0 && requestDetails.userID.gender != 1 )">
+                                                                                                                لم يحدد 
+                                                                                                            </span>
+                                                                                                </h4>
+                                                                                            </div>
+                                                                
+                                                                                        </div>
+                                                                               
+                                                                                </div>
+                                                
+                                                
+                                            </div>
+                            
+                            
+                            
+                                        </div>
+                                    </div>
+                        
+                        
+                                    
+                                    <div style="border-right: 1px solid #707070;" class="col-md-4 col-sm-12">
+                                        <div class="row">
+                                                <div class="col-xs-12 col-sm-6 col-md-6 text-md-left text-sm-left text-xs-center  m-auto pt-3 ">
+                                                        صورة شخصية
+                                                    
+                                                </div>  
+                                            <div class="col-xs-12 col-sm-6 col-md-6 text-center m-auto">
+                                               
+                                                <div style="width: 100px; height: 100px; background-color: #000; position: relative; "
+                                                    class="m-auto">
+                                                    <img style="width: 100px; height: 100px;" id="d1" src="{{requestDetails.userID.personalImg}}" class="img-thumbnail" />
+                                                    
+                                
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="row  pt-3">
+                                                <div class="col-xs-12 col-sm-6 col-md-6 text-md-left text-sm-left text-xs-center m-auto pt-3 ">
+                                                
+                                                        صورة الرخصة
+                                                        
+                                                    </div> 
+                                            <div class="col-xs-12 col-sm-6 col-md-6 text-center m-auto">
+                                                    <div style="width: 100px; height: 100px; background-color: #000; position: relative; "
+                                                    class="m-auto">
+                                                    <img style="width: 100px; height: 100px;" id="d1" src="{{requestDetails.userID.licenseImg}}" class="img-thumbnail" />
+                                                    
+                                
+                                                </div>
+                                               
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row  pt-3">
+                                                <div class="col-xs-12 col-sm-6 col-md-6 text-md-left text-sm-left text-xs-center m-auto pt-3 ">
+                                            
+                                                        صورة البطاقة
+                                                    </div>  
+                                            <div class="col-xs-12 col-sm-6 col-md-6 text-center m-auto">
+                                                    <div style="width: 100px; height: 100px; background-color: #000; position: relative; "
+                                                    class="m-auto">
+                                                    <img style="width: 100px; height: 100px;" id="d1" src="{{requestDetails.userID.nationalIdImg}}" class="img-thumbnail" />
+                                                    
+                                
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                            </div>
+                           
+                </div>
+                
+                <div>
+                        <div style="padding-top: 20px !important" class="row pt-3">
+                                <div class="text-justify col-sm-12 col-md-4  text-md-left text-sm-center">
+                                    <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                </div>
+                                <div class="col-sm-12 col-md-4 text-center">
+                                    <h2>
+                
+                                            بيانـات السيـارة 
+                                    </h2>
+                                </div>
+                                <div class="text-justify col-sm-12 col-md-4  text-md-right text-sm-center">
+                                    <img src="http://134.209.178.237/kayanWebsite/images/line.png" alt="">
+                                </div>
+                            </div>
+    
+    
+                            <div class="row pt-5">
+        
+                                    <div class="col-md-8 col-sm-12">
+                                        
+                                        <div class="row py-3 text-center  m-auto">
+                                            <div class="col-sm-12 text-center m-auto">
+                                                <div class="row text-center m-auto pb-3">
+                                                <div class="col-sm-6 col-md-6 text-right">
+                                                        <div class="form-group">
+                                                            <h4 class="color70">فئة </h4>
+                                                        </div>
+                            
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                            <div class="form-group  text-center">
+                                                                <h4 class="color70">
+                                                                   {{ requestDetails.carID.categoryID.titleAr}}
+                                                                </h4>
+                                                            </div>
+                                
+                                                        </div>
+                                               
+                                                </div>
+                                                <div class="row text-center m-auto pb-3">
+                                                        <div class="col-sm-6 col-md-6 text-right">
+                                                                <div class="form-group">
+                                                                    <h4 class="color70">فئة فرعية </h4>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-6">
+                                                                    <div class="form-group text-center">
+                                                                        <h4 class="color70"> 
+                                                                            {{ requestDetails.carID.subCategoryID.titleAr}}</h4>
+                                                                    </div>
+                                        
+                                                                </div>
+                                                       
+                                                        </div>
+                        
+                                                    
+                                                        <div class="row text-center m-auto pb-3">
+                                                                <div class="col-sm-6 col-md-6 text-right">
+                                                                        <div class="form-group">
+                                                                            <h4 class="color70">النوع</h4>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                                    <div class="col-sm-6 col-md-6">
+                                                                            <div class="form-group text-center">
+                                                                                <h4 class="color70">
+                                                                                        {{ requestDetails.carID.carTypeID.titleAr}}
+                                                                                </h4>
+                                                                            </div>
+                                                
+                                                                        </div>
+                                                               
+                                                                </div>
+                        
+                                                                <div class="row text-center m-auto pb-3">
+                                                                        <div class="col-sm-6 col-md-6 text-right">
+                                                                                <div class="form-group">
+                                                                                    <h4 class="color70">الموديل </h4>
+                                                                                </div>
+                                                    
+                                                                            </div>
+                                                                            <div class="col-sm-6 col-md-6">
+                                                                                    <div class="form-group text-center">
+                                                                                        <h4 class="color70">
+                                                                                                {{ requestDetails.carID.carModelID.titleAr}}
+                                                                                        </h4>
+                                                                                    </div>
+                                                        
+                                                                                </div>
+                                                                       
+                                                                        </div>
+                        
+                                                                        <div class="row text-center m-auto pb-3">
+                                                                                <div class="col-sm-6 col-md-6 text-right">
+                                                                                        <div class="form-group">
+                                                                                            <h4 class="color70">سنة الصنع</h4>
+                                                                                        </div>
+                                                            
+                                                                                    </div>
+                                                                                    <div class="col-sm-6 col-md-6">
+                                                                                            <div class="form-group text-center">
+                                                                                                <h4 class="color70">
+                                                                                                        {{ requestDetails.carID.carYearID.titleAr}}
+                                                                                                </h4>
+                                                                                            </div>
+                                                                
+                                                                                        </div>
+                                                                               
+                                                                                </div>
+                                                                                <div class="row text-center m-auto pb-3">
+                                                                                        <div class="col-sm-6 col-md-6 text-right">
+                                                                                                <div class="form-group">
+                                                                                                    <h4 class="color70">سائق</h4>
+                                                                                                </div>
+                                                                    
+                                                                                            </div>
+                                                                                            <div class="col-sm-6 col-md-6">
+                                                                                                    <div class="form-group text-center">
+                                                                                                        <h4 class="color70">
+                                                                                                    <span ng-if="requestDetails.carID.allowDriver == 1">
+                                                                                                        نعم 
+                                                                                                        </span>
+                                                                                                        <span ng-if="requestDetails.carID.allowDriver == 0">
+                                                                                                                لا
+                                                                                                                </span>
+    
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                        
+                                                                                                </div>
+                                                                                       
+                                                                                        </div>
+                                                                                        <div class="row text-center m-auto pb-3">
+                                                                                                <div class="col-sm-6 col-md-6 text-right">
+                                                                                                        <div class="form-group">
+                                                                                                            <h4 class="color70">ناقل الحركة</h4>
+                                                                                                        </div>
+                                                                            
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6 col-md-6">
+                                                                                                            <div class="form-group text-center">
+                                                                                                                <h4 class="color70">
+    
+                                                                                                                        <span ng-if="requestDetails.carID.automatic == 1">
+                                                                                                                                أوتوماتيك
+                                                                                                                                </span>
+                                                                                                                                <span ng-if="requestDetails.carID.automatic == 0">
+                                                                                                                                        مانوال
+                                                                                                                                        </span>
+                                                                                                                </h4>
+                                                                                                            </div>
+                                                                                
+                                                                                                        </div>
+                                                                                               
+                                                                                                </div>
+                                                
+                                                
+                                            </div>
+                            
+                            
+                            
+                                        </div>
+                                    </div>
+                        
+                        
+                                    
+                                    <div class="col-md-4 col-sm-12">
+                                      
+                                    </div>
+                            </div>
+                           
+                </div>
+            </div>
+        
+            
+                  <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                  <div class="modal-content">
+                    <form ng-submit="editCar()">
+                            <div class="modal-header">
+                                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                <h5 class="modal-title mr-auto" id="exampleModalLongTitle">أختر حالة الطلب</h5>
+                              
+                            </div>
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">choose request status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> -->
+                        <div class="modal-body">
+                        
+                        <div ng-if="requestDetails.status == 1" class="row text-center m-auto  pb-3">
+                            <span 
+                                type="text" 
+                                class="form-control text-center custom-input" 
+                                id="selectRequestOption3" 
+                                placeholder="قبول الطلب "
+                                value="قبول الطلب"
+                                autocomplete="off"
+                                disabled
+                                ng-click="selectRequestOption(3)"
+                                >
+                                قبول الطلب
+                            </span>
+                
+                        </div>
+                        <div  ng-if="requestDetails.status == 1" class="row text-center m-auto  pb-3">
+                                <span 
+                                type="text" 
+                                class="form-control text-center custom-input selectRequestOption" 
+                                id="selectRequestOption2" 
+                                placeholder="رفض الطلب "
+                                autocomplete="off"
+                                value="رفض الطلب"
+                                disabled
+                                ng-click="selectRequestOption(2)"
+                                >
+                                رفض الطلب
+                            </span>
+                        </div>
+                        <div  ng-if="requestDetails.status != 1" class="row text-center m-auto  pb-3">
+                                <span 
+                                type="text" 
+                                class="form-control text-center custom-input selectRequestOption" 
+                                id="selectRequestOption10" 
+                                placeholder="تجهيز السيارة "
+                                autocomplete="off"
+                                value="تجهيز السيارة"
+                                disabled
+                                ng-click="selectRequestOption(10)"
+                                >
+                                تجهيز السيارة
+                                </span>
+            
+                        </div>
+                        <div  ng-if="requestDetails.status != 1" class="row text-center m-auto  pb-3">
+                                <span 
+                                type="text" 
+                                class="form-control text-center custom-input selectRequestOption" 
+                                id="selectRequestOption4" 
+                                placeholder="تسليم السيارة "
+                                autocomplete="off"
+                                value="تسليم السيارة"
+                                disabled
+                                ng-click="selectRequestOption(4)"
+                                >
+                                تسليم السيارة
+                            </span>
+            
+                        </div>
+                        <div  ng-if="requestDetails.status != 1" class="row text-center m-auto  pb-3">
+                                <span 
+                                type="text" 
+                                class="form-control text-center custom-input selectRequestOption" 
+                                id="selectRequestOption5" 
+                                placeholder="أستلام السيارة "
+                                autocomplete="off"
+                                value="أستلام السيارة"
+                                disabled
+                                ng-click="selectRequestOption(5)"
+                                >
+                                أستلام السيارة
+                            </span>
+            
+                        </div>
+                        </div>
+                        <div class="modal-footer m-auto d-block" style=" border: none;">
+                            <div class="row  text-center">
+                                <button ng-click="updateRequest(currentRequestStatus)"  type="button" style="border-radius: 50px; height: 45px; line-height: 1; padding-left: 30px; padding-right: 30px; font-size: 18px;" class="default-button2 m-auto text-center">
+                                        حـفــظ
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                     
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    
+            <div ng-if="!view || (view && view != 1)"   style="margin-top: -50px;"  class="container">
+                    <div class="row">
+                            <div  ng-repeat="c in pendingRequests track by $index" class="col-md-6 col-sm-12 px-2 my-2">
+                                <div  style="background-color: #fff;border-radius: 6px; cursor: pointer;" ng-click="getRequestDetails(c._id)" class="px-2"  >
+                                        <div class="row m-auto text-center">
+                                            <span style="background-color: #fff ; cursor: pointer; text-align: center; font-weight: bold; height: 50px; color: #000;line-height: 2.25;" class="text-center m-auto"   type="text" >
+                                                {{c.carID.categoryID.titleAr}} - {{c.carID.carTypeID.titleAr}} - {{c.carID.carModelID.titleAr}}  
+                                            </span>
+                                        </div>
+                                        <div class="row  m-auto text-left">
+                                            <span style="background-color: #fff ; cursor: pointer; text-align: center; height: 20px; font-size: 14px; color: #000;line-height: 2.25;" class="text-center mr-auto"   type="text" >
+                                               طلب #01258
+                                            </span>
+                                        </div>
+                                        <div class="row">
+                                            <div  class="col-sm-3"> 
+                                                <div class="m-auto text-center " style="width: 100%; position: relative; display: block; width: 100%;">
+                                                        <img  style="width: 100px; height: 100px;" class="img-thumbnail  mb-3" src="{{c.carID.logo || c.carID.img1 || c.carID.img2}}" alt="">
+                                                       
+                                                </div>
+                                            
+                                            </div>
+                                            <div  class="col-sm-4 align-middle text-right"> 
+                                                <div class="py-4">
+                                                        <h5>{{c.userID.fullname}}</h5>     
+                                                        <h5>{{c.userID.mobile}}</h5>                
+                                                </div>
+                                                                                       
+                                                
+                                            
+                                            </div>
+                                            <div  class="col-sm-5"> 
+                                                    <div ng-if="c.status == 1" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                            <input disabled value="معلق " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                    </div>
+                                                    <div ng-if="c.status == 2" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                            <input disabled value="مرفوض " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                    </div>
+                                                    <div ng-if="c.status == 3" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                            <input disabled value="موافقة " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                    </div>
+                                                    <div ng-if="c.status == 4" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                            <input disabled value="فى الايجار " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                    </div>
+                                               
+                                                    <div ng-if="c.status == 5" class="m-auto text-center py-4 " style=" position: relative; display: block; width: 80%;">
+                                                            <input disabled value="انتهى " style="background-color: #fff; border: none; -webkit-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            -moz-box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75) , -3px -3px 9px -7px rgba(0,0,0,0.75);
+                                                            box-shadow: 6px 6px 9px -7px rgba(0,0,0,0.75), -3px -3px 9px -7px rgba(0,0,0,0.75); border-radius: 5px;" type="text" class="form-control my-1 mr-1 text-center">
+                                                    </div>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="row pb-2 pt-2">
+                                            
+                                                <div class="col-sm-1">
+    
+                                                </div>
+                                                <div class="col-sm-8">
+                                                        <h3 style="font-size: 18px;"  class="text-right">
+                                                                <span class="mr-3">
+                                                                        <img src="http://134.209.178.237/kayanWebsite/images/calendar.png" alt="">
+                                                                    </span>
+                                                            من  {{c.startDate | cmdate:'yyyy-MM-dd'}} 
+                                                        </h3>
+                                                    </div>
+    
+                                            
+                                             
+                                        </div>
+                                        <div class="row pb-4 ">
+                                            
+                                                <div class="col-sm-1">
+    
+                                                </div>
+                                                <div class="col-sm-8">
+                                                        <h3 style="font-size: 18px; border-bottom: 1 px solid #707070;"  class="text-right pr-5 d-block w-100">الى  
+                                                                {{c.endDate | cmdate:'yyyy-MM-dd'}} 
+                                                            </h3> 
+                                                    </div>
+    
+                                            
+                                                
+                                        </div>
+                                </div>
+                                
+                               
+                            </div>
+        
+                           
+                        </div>
+            </div>
+        
+        </div>

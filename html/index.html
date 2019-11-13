@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en" ng-app="kayanUser">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="images/icon-.png">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+  <!-- Modified  Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+  <!-- Modified  CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../generaljs/angular.min.js"></script>
+  <script src="../generaljs/dirPagination.js"></script>
+  <script src="../generaljs/angular-cookies.min.js"></script>
+  <script src="../generaljs/angular-route.min.js"></script>
+
+
+  <script src="../generaljs/KayanUserGeneral.js"></script>
+
+  <title> Kayan</title>
+</head>
+
+<body ng-controller="HomeCtrl" style="overflow-x: hiddden">
+
+
+  <!-- Strat Main Nav-->
+  <nav ng-if="!kayanLang || kayanLang == 'en'" class="navbar  fixed-top navbar-expand-lg  navbar-light bg-light">
+    <a class="ml-lg-5 mr-5" class="navbar-brand" href="#">
+      <img src="http://134.209.178.237/kayanWebsite/images/logo-.png" height="57" alt="Kayan">
+
+
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form style="position: relative;" class="form-inline my-2 my-lg-0 mr-auto">
+        <input style="width: 345px; padding-right: 22px !important; border-radius: 0; background-color: #F2F3F5;"
+          class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <i style="position: absolute; right: 15px; color: #343C53;" class="fas fa-search"></i>
+
+      </form>
+      <ul class="navbar-nav ml-auto mr-lg-5">
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; position: relative;">
+              <i style="width: 37px; height: 37px; color: #000" class="far fa-bell fa-2x">
+
+              </i>
+              <span
+                style="width: 20px;height: 20px;  position: absolute;right: -5px; top: -10px; border-radius: 50%; background-color: #FF4B4B; color: #fff; font-size: 10px;">
+                1
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a ng-click="changeLang('ar')" class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; background-color: #C8972C; color: #343434">
+              AR
+            </span>
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a ng-if="kayanUser && kayanUser._id" class="nav-link" href="#">
+
+            <img style="height: 37px; width: 37px;" src="http://134.209.178.237/kayanWebsite/images/logout-.png" />
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- on sm & xs sceens only-->
+    <div style="display: block" class="ml-auto  d-xs-block d-md-none">
+      <ul class="navbar-nav ml-auto mr-lg-5">
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; position: relative;">
+              <i style="width: 37px; height: 37px; color: #000" class="far fa-bell fa-2x">
+
+              </i>
+              <span
+                style="width: 20px;height: 20px;  position: absolute;right: -5px; top: -10px; border-radius: 50%; background-color: #FF4B4B; color: #fff; font-size: 10px;">
+                1
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a  ng-click="changeLang('ar')"  class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; background-color: #C8972C; color: #343434">
+              AR
+            </span>
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a ng-if="kayanUser && kayanUser._id" class="nav-link" href="#">
+
+            <img style="height: 37px; width: 37px;" src="http://134.209.178.237/kayanWebsite/images/logout-.png" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+  <nav ng-if="kayanLang == 'ar'" class="navbar  fixed-top navbar-expand-lg  navbar-light bg-light">
+    <a class="ml-lg-5 ml-5" class="navbar-brand" href="#">
+      <img src="http://134.209.178.237/kayanWebsite/images/logo-.png" height="57" alt="Kayan">
+
+
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form style="position: relative;" class="form-inline my-2 my-lg-0 ml-auto">
+        <input style="width: 345px; padding-left: 22px !important; border-radius: 0; background-color: #F2F3F5;"
+          class="form-control ml-sm-2" type="search" placeholder="البحث" aria-label="Search">
+        <i style="position: absolute; left: 15px; color: #343C53;" class="fas fa-search"></i>
+
+      </form>
+      <ul class="navbar-nav mr-auto mr-lg-5">
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; position: relative;">
+              <i style="width: 37px; height: 37px; color: #000" class="far fa-bell fa-2x">
+
+              </i>
+              <span
+                style="width: 20px;height: 20px;  position: absolute;right: -5px; top: -10px; border-radius: 50%; background-color: #FF4B4B; color: #fff; font-size: 10px;">
+                1
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a  ng-click="changeLang('en')"  class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; background-color: #C8972C; color: #343434">
+              EN
+            </span>
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a ng-if="kayanUser && kayanUser._id" class="nav-link" href="#">
+
+            <img style="height: 37px; width: 37px;" src="http://134.209.178.237/kayanWebsite/images/logout-.png" />
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- on sm & xs sceens only-->
+    <div style="display: block" class="mr-auto  d-xs-block d-md-none">
+      <ul class="navbar-nav mr-auto mr-lg-5">
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; position: relative;">
+              <i style="width: 37px; height: 37px; color: #000" class="far fa-bell fa-2x">
+
+              </i>
+              <span
+                style="width: 20px;height: 20px;  position: absolute;right: -5px; top: -10px; border-radius: 50%; background-color: #FF4B4B; color: #fff; font-size: 10px;">
+                1
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a ng-click="changeLang('en')" class="nav-link" href="#">
+
+            <span
+              style="display: block; text-align: center ; margin: auto; line-height: 2.5; width: 37px; height: 37px; border-radius: 50%; background-color: #C8972C; color: #343434">
+              EN
+            </span>
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a ng-if="kayanUser && kayanUser._id" class="nav-link" href="#">
+
+            <img style="height: 37px; width: 37px;" src="http://134.209.178.237/kayanWebsite/images/logout-.png" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+  <!-- End Main Nav-->
+  <!-- Strat  Cover -->
+
+  <div ng-if="!kayanLang || kayanLang == 'en'" style="position: relative;" class="cover">
+    <div class="contnt">
+      <div class="container">
+        <div class="row pt-5">
+          <div class="col-xs-12 col-md-10 pt-5">
+            <h1 class="pt-4">Cars Renting</h1>
+            <h3 class="my-3"> Different types with a lot of Models</h3>
+          </div>
+          <div class="clear"></div>
+
+        </div>
+        <div ng-if="!kayanUser._id" class="row  ml-1">
+          <a href="#" ng-click="changeCoverItems('loginCollapseOuten')" id="loginCollapseOuten" class="default-button"> SIGN IN</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="contnt-shape">
+
+    </div>
+    <img class="mobileapp d-none d-xs-none d-md-block"
+      style="position: absolute; bottom : -40%; right: 20%; width: 250px;" src="http://134.209.178.237/kayanWebsite/images/iphon.png" alt="">
+
+
+    <!-- Start Slide Bar -->
+    
+    <!-- Start Log in EN  -->
+
+    <div ng-controller="SignInCtrl" class="loginCollapseen" style="position: absolute; right: 25px; top:5px; width: 265px; height: 290px; background-color: #C8972C; border-radius: 15px; margin-right: -290px;">
+        <form ng-submit="loginFun()" class="px-4 pt-3 ">
+            <div class="form-group">
+             
+              <input style="text-align: center;" type="email" class="form-control" id="emailid" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+             
+              <input style="text-align: center;" type="password" class="form-control" id="passwordid" placeholder="Password">
+            </div>
+           
+            <button type="submit" class="btn btn-dark form-control">Log in</button>
+            <button style="color: #000; text-decoration: none; font-size: 0.9em;" type="button" class="btn btn-link form-control">Forget your password</button>
+
+            <div class="pt-4">
+                <button style="border-radius: 25px;" type="button" class="btn btn-light form-control">Create an account</button>
+
+            </div>
+
+          </form>
+    </div> 
+    <!-- End Log in EN  -->
+    <!-- Sidebar EN -->
+    <i ng-if="kayanUser && kayanUser._id" ng-click="changeCoverItems('sidebarCollapseen')" style="cursor: pointer; position: absolute; left: 10px; top: 0; color: #fff; padding: 10px; background-color: #262626;"id="sidebarCollapseOuten" class="fas fa-sliders-h fa-2x"></i>
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <i style="cursor: pointer;" ng-click="changeCoverItems('sidebarCollapseen')" class="fas fa-sliders-h fa-2x"></i>
+
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="nav-item active">
+
+            <a href="#">
+              <i class="far fa-user fa-lg pr-2"></i>
+              Account
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#">
+
+              <i class="fas fa-car fa-lg pr-2"></i>
+              My Cars
+            </a>
+          </li>
+          <li class="nav-item ">
+
+            <a href="#">
+              <i class="fas fa-file fa-lg pr-2"></i>
+              Requests</a>
+          </li>
+          <li class="nav-item ">
+
+            <a href="#">
+              <i class="fas fa-file fa-lg pr-2"></i>
+              My Requests</a>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-file-invoice-dollar fa-lg pr-2"></i>
+              Invoices Due</a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="far fa-comments fa-lg pr-2"></i>
+
+              Contact Us</a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-file-alt fa-lg pr-2"></i>
+              About Kayan</a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-file-alt fa-lg pr-2"></i>
+              Terms & Conditions </a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-sign-out-alt fa-lg pr-2"></i>
+              Sign Out </a>
+          </li>
+        </ul>
+
+
+      </nav>
+    </div>
+    <!-- End Slide Bar -->
+    <!-- Start Log in EN  -->
+    <!-- <div style="position: absolute; left: 10px; top:5px; width: 265px; height: 290px; background-color: #C8972C; border-radius: 15px;">
+        <form ng-submit="loginFun()" class="px-4 pt-3 ">
+            <div class="form-group">
+             
+              <input style="text-align: center;" type="email" class="form-control" id="emailid" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+             
+              <input style="text-align: center;" type="password" class="form-control" id="passwordid" placeholder="Password">
+            </div>
+           
+            <button type="submit" class="btn btn-dark form-control">Log in</button>
+            <button style="color: #000; text-decoration: none; font-size: 0.9em;" type="button" class="btn btn-link form-control">Forget your password</button>
+
+            <div class="pt-4">
+                <button style="border-radius: 25px;" type="button" class="btn btn-light form-control">Create an account</button>
+
+            </div>
+
+          </form>
+    </div> -->
+
+
+    <!-- <div style="position: absolute; left: 10px; top:5px; width: 265px; height: 290px; background-color: #C8972C; border-radius: 15px;">
+      <form ng-submit="loginFun()" class="px-4 pt-3 ">
+          <div class="form-group">
+           
+            <input style="text-align: center;" type="email" class="form-control" id="emailid" aria-describedby="emailHelp" placeholder="أدخل الإيميل">
+          </div>
+          <div class="form-group">
+           
+            <input style="text-align: center;" type="password" class="form-control" id="passwordid" placeholder="الباسورد">
+          </div>
+         
+          <button type="submit" class="btn btn-dark form-control">تسجيل الدخول</button>
+          <button style="color: #000; text-decoration: none; font-size: 0.9em;" type="button" class="btn btn-link form-control">فقدت كلمة المرور؟</button>
+
+          <div class="pt-4">
+              <button style="border-radius: 25px;" type="button" class="btn btn-light form-control">أنشاء حساب</button>
+
+          </div>
+
+        </form>
+  </div> -->
+    <!-- End Log in EN  -->
+  
+  
+  
+  </div>
+
+  <div  ng-if="kayanLang == 'ar'"  style="position: relative;" class="cover">
+    <div class="contnt">
+      <div class="container">
+        <div class="row pt-5 pr-4">
+          <div class="col-xs-12 col-md-10 pt-5 text-right">
+            <h1 class="pt-4 arFont">أستئجار السيارات </h1>
+            <h3 class="my-3 arFont"> أنواع مختلفة مع الكثير من النماذج
+            </h3>
+          </div>
+          <div class="clear"></div>
+
+        </div>
+        <div class="row  mr-1 pr-4">
+          <a href="#" ng-if="!kayanUser._id" ng-click="changeCoverItems('loginCollapseOutar')" id="loginCollapseOutar" class="default-button"> تسجيل الدخول</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="contnt-shape2">
+
+    </div>
+    <img class="mobileapp d-none d-xs-none d-md-block"
+      style="position: absolute; bottom : -40%; left: 20%; width: 250px;" src="http://134.209.178.237/kayanWebsite/images/iphon.png" alt="">
+
+
+
+
+    
+
+    <!-- Start Slide Bar -->
+    <!-- Sidebar AR  -->
+    <i ng-if="kayanUser && kayanUser._id" style="cursor: pointer; position: absolute; right: 28px; top: 0; color: #fff; padding: 10px; background-color: #262626;" ng-click="changeCoverItems('sidebarCollapsear')" class="fas fa-sliders-h fa-2x"></i>
+    <div class="wrapper">
+
+      <nav id="sidebarar">
+        <div class="sidebar-header">
+          <i style="cursor: pointer;" ng-click="changeCoverItems('sidebarCollapsear')" class="fas fa-sliders-h fa-2x"></i>
+
+        </div>
+
+        <ul class="list-unstyled components">
+         
+
+          <li class="nav-item active">
+
+            <a href="#">
+              <i class="far fa-user fa-lg pl-2"></i>
+              حسابى
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#">
+
+              <i class="fas fa-car fa-lg pl-2"></i>
+              سيارتى
+            </a>
+          </li>
+          <li class="nav-item ">
+
+            <a href="#">
+              <i class="fas fa-file fa-lg pl-2"></i>
+              طلبات واردة
+            </a>
+          </li>
+          <li class="nav-item ">
+
+            <a href="#">
+              <i class="fas fa-file fa-lg pl-2"></i>
+              طلباتى
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-file-invoice-dollar fa-lg pl-2"></i>
+              الفواتير المستحقة
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="far fa-comments fa-lg pl-2"></i>
+
+              تواصل معنا
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-file-alt fa-lg pl-2"></i>
+              عن كيان
+
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-file-alt fa-lg pl-2"></i>
+              الشروط و الأحكام
+
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a href="#">
+              <i class="fas fa-sign-out-alt fa-lg pl-2"></i>
+              تسجيل الخروج
+            </a>
+          </li>
+        </ul>
+
+
+      </nav>
+    </div>
+    <!-- Start Log in AR  -->
+    <div ng-controller="SignInCtrl" class="loginCollapsear" style="position: absolute; left: 10px; top:5px; width: 265px; height: 290px; background-color: #C8972C; border-radius: 15px; margin-left:-275px ;">
+      <form ng-submit="loginFun()" class="px-4 pt-3 ">
+          <div class="form-group">
+           
+            <input style="text-align: center;" type="email" class="form-control" id="emailid" aria-describedby="emailHelp" placeholder="أدخل الإيميل">
+          </div>
+          <div class="form-group">
+           
+            <input style="text-align: center;" type="password" class="form-control" id="passwordid" placeholder="الباسورد">
+          </div>
+         
+          <button type="submit" class="btn btn-dark form-control">تسجيل الدخول</button>
+          <button style="color: #000; text-decoration: none; font-size: 0.9em;" type="button" class="btn btn-link form-control">فقدت كلمة المرور؟</button>
+
+          <div class="pt-4">
+              <button style="border-radius: 25px;" type="button" class="btn btn-light form-control">أنشاء حساب</button>
+
+          </div>
+
+        </form>
+  </div>
+
+      
+    <!-- End Log in AR  -->
+    
+   
+  
+  
+  </div>
+  <!-- End  Cover -->
+
+
+  <!-- Start  About Kayan -->
+  <div  ng-if="!kayanLang || kayanLang == 'en'" class="aboutme py-5">
+    <div class="container">
+
+      <div class="row pt-4 mb-4">
+        <div class="col-xs-12 col-md-6">
+          <h2 class="heading ">ABOUT KAYAN</h2>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-xs-12 col-md-6">
+          <p class="dtls">
+
+            KAYAN is a multinational company located in
+            Egypt, specialized in renting cars multinational
+            company located in Egypt, specialized in renting
+            cars multinational company located in Egypt,
+            specialized in renting cars multinational company
+            located in Egypt, specialized in renting cars
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <div  ng-if="kayanLang == 'ar'" class="aboutme py-5">
+    <div class="container arFont pr-4">
+
+      <div class="row pt-4 mb-4">
+        <div class="col-xs-12 col-md-6 text-right">
+          <h2 class="heading">عن كيان </h2>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-xs-12 col-md-6 text-right">
+          <p class="dtls">
+
+            كيان هي شركة متعددة الجنسيات تقع في مصر متخصصة في تأجير السيارات متعددة الجنسيات شركة تقع في مصر ، متخصصة في تأجير شركة سيارات متعددة الجنسيات تقع في مصر متخصصة في تأجير السيارات شركة متعددة الجنسيات تقع في مصر ، متخصصة في تأجير السيارات
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- End  About Kayan -->
+
+
+
+
+
+
+  <!-- Start  Categories -->
+  <div ng-if="!kayanLang || kayanLang == 'en'"  class="categories py-5">
+    <div class="container">
+      <div class="row pt-4 mb-2 ">
+
+        <h2 style="margin: auto !important; text-align: center !important" class=" text-justify text-center d-block">
+          Types</h2>
+
+
+
+      </div>
+      <div class="pb-5">
+        <p style="margin: auto !important; text-align: center !important"
+          class=" text-justify text-center  d-block text-muted">Different types with a lot of Models</p>
+
+      </div>
+
+      <div class="clearfix"></div>
+
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol style=" bottom: -70px;" class="carousel-indicators">
+          <li ng-repeat="c in categories" data-target="#carouselExampleIndicators" data-slide-to="0"
+            ng-class="{'active': $index == 0 }"></li>
+
+        </ol>
+        <div class="carousel-inner">
+          <div ng-repeat="c in categories" ng-class="{'active': $index == 0 }" class="carousel-item">
+            <div class="row">
+              <div ng-repeat="i in c" class="col-lg-4 col-md-6 col-xs-12 mr-auto text-center mb-3">
+                <div class="mr-auto carousel-card">
+                  <h3 class="pt-3 pb-3 carouselh3">{{i.titleEN}}</h3>
+                  <div class="pb-1">
+                    <img style="width: 200px;" src="{{i.imgPath}}" alt="First slide">
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <a style="left: -100px; color: #000 !important;" class="carousel-control-prev" href="#carouselExampleIndicators"
+          role="button" data-slide="prev">
+          <i class="fas fa-chevron-left fa-lg"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a style="right: -100px; color: #000 !important;" class="carousel-control-next"
+          href="#carouselExampleIndicators" role="button" data-slide="next">
+          <i class="fas fa-chevron-right fa-lg"></i>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  <div ng-if="kayanLang == 'ar'"  class="categories py-5">
+    <div class="container">
+      <div class="row pt-4 mb-2 arFont">
+
+        <h2 style="margin: auto !important; text-align: center !important" class=" text-justify text-center d-block">
+          الانواع </h2>
+
+
+
+      </div>
+      <div class="pb-5">
+        <p style="margin: auto !important; text-align: center !important"
+          class=" text-justify text-center  d-block text-muted">أنواع مختلفة مع الكثير من النماذج
+        </p>
+
+      </div>
+
+      <div class="clearfix"></div>
+
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol style=" bottom: -70px;" class="carousel-indicators">
+          <li ng-repeat="c in categories" data-target="#carouselExampleIndicators" data-slide-to="0"
+            ng-class="{'active': $index == 0 }"></li>
+
+        </ol>
+        <div class="carousel-inner">
+          <div ng-repeat="c in categories" ng-class="{'active': $index == 0 }" class="carousel-item">
+            <div class="row">
+              <div ng-repeat="i in c" class="col-lg-4 col-md-6 col-xs-12 mr-auto text-center mb-3">
+                <div class="mr-auto carousel-card">
+                  <h3 class="pt-3 pb-3 carouselh3">{{i.titleAr}}</h3>
+                  <div class="pb-1">
+                    <img style="width: 200px;" src="{{i.imgPath}}" alt="First slide">
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <a style="left: -100px; color: #000 !important;" class="carousel-control-prev" href="#carouselExampleIndicators"
+          role="button" data-slide="prev">
+          <i class="fas fa-chevron-left fa-lg"></i>
+          <span class="sr-only">السابق </span>
+        </a>
+        <a style="right: -100px; color: #000 !important;" class="carousel-control-next"
+          href="#carouselExampleIndicators" role="button" data-slide="next">
+          <i class="fas fa-chevron-right fa-lg"></i>
+          <span class="sr-only">التالى</span>
+        </a>
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+  <!-- End  Categories -->
+
+
+  <!-- Start Add Car -->
+  <div style="clear: both;"></div>
+  <div ng-if="!kayanLang || kayanLang == 'en'" style="min-height: 60vh;" class="container-fluid add-car my-5">
+
+    <div class="row py-5">
+      <div class="container">
+
+
+        <h2 class=" text-justify text-left  text-white">ADD YOUR CAR</h2>
+
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="row">
+      <div style="background-color: #fff !important; height: 500px !important" class="col-lg-5 col-xs-12 ">
+        <div class="container pl-5">
+          <div class="row pl-5 pl-5 ">
+            <h2 class=" text-justify text-left d-block px-5 pt-5 pb-1">ADD YOUR CAR AND
+              BRING MONEY</h2>
+          </div>
+
+          <div class="row pl-5 pl-5">
+
+
+            <p class="d-block px-5 pb-1 pt-1 text-muted">Different tyh6es with a lot of Models</p>
+
+
+          </div>
+
+          <div class="row pl-5 py-1">
+
+
+
+            <span class="d-block   mx-5 text-muted"
+              style="height: 1px; background: #6c757d!important; width: 90px;"></span>
+
+          </div>
+          <div class="row pl-5 py-1">
+
+            <p style="font-size: 1.4em;" class="d-block px-5 pb-1 pt-1 text-black">types with a lot of Models, Different
+              types with a lot of Models types with a lot
+              of Models, Different types with a lot of
+              Models </p>
+
+          </div>
+          <div class="row  pl-5 py-1">
+            <a href="#" class="default-button ml-5"> ADD now</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div ng-if="kayanLang == 'ar'" style="min-height: 60vh;" class="container-fluid add-car my-5">
+
+    <div class="row py-5">
+      <div class="container arFont" >
+
+
+        <h2 class=" text-justify text-right  text-white">أضف سيارتك </h2>
+
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="row">
+      <div style="background-color: #fff !important; height: 500px !important" class="col-lg-5 col-xs-12 ">
+        <div class="container pl-5">
+          <div class="row pr-5 pl-5 ">
+            <h2 class=" text-justify text-right d-block px-5 pt-5 pb-1">أضف سيارتك وجلب المال</h2>
+          </div>
+
+          <div class="row pr-5 pl-5">
+
+
+            <p class="d-block px-5 pb-1 pt-1 text-muted">أنواع مختلفة مع الكثير من النماذج
+            </p>
+
+
+          </div>
+
+          <div class="row pr-5 py-1">
+
+
+
+            <span class="d-block   px-5 text-muted"
+              style="height: 1px; background: #6c757d!important; width: 90px;"></span>
+
+          </div>
+          <div class="row pr-5 py-1">
+
+            <p style="font-size: 1.4em;" class="d-block px-5 pb-1 pt-1 text-black text-right">أنواع مع الكثير من النماذج ، أنواع مختلفة مع الكثير من النماذج أنواع مع الكثير من النماذج ، أنواع مختلفة مع الكثير من النماذج </p>
+
+          </div>
+          <div class="row  pr-5 py-1">
+            <a href="#" class="default-button mr-5"> أضف الان </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- End Add Car -->
+
+
+
+
+
+  <!-- Start Kayan App -->
+  <div style="clear: both;"></div>
+  <div ng-if="!kayanLang || kayanLang == 'en'" class="container-fluid  my-5">
+
+    <div class="row pt-5 pb-1">
+      <div class="container">
+
+
+        <h2 class=" text-justify text-center  text-black">KAYAN APP</h2>
+
+        <p class="d-block px-5 pb-1 text-center pt-1 text-muted">Different types with a lot of Models</p>
+
+
+      </div>
+
+    </div>
+
+    <div class="row text-center m-auto">
+      <img class="text-center m-auto img-fluid" src="http://134.209.178.237/kayanWebsite/images/iphon3.png" alt="">
+    </div>
+
+
+
+  </div>
+
+  <div ng-if="kayanLang == 'ar'" class="container-fluid  my-5">
+
+    <div class="row pt-5 pb-1">
+      <div class="container">
+
+
+        <h2 class=" text-justify text-center  text-black">تطبيق كيان </h2>
+
+        <p class="d-block px-5 pb-1 text-center pt-1 text-muted">أنواع مختلفة مع الكثير من النماذج
+        </p>
+
+
+      </div>
+
+    </div>
+
+    <div class="row text-center m-auto">
+      <img class="text-center m-auto img-fluid" src="http://134.209.178.237/kayanWebsite/images/iphon3.png" alt="">
+    </div>
+
+
+
+  </div>
+  <!-- End Kayan App -->
+
+
+  <!-- Start Kayan App 2 -->
+  <div style="clear: both;"></div>
+  <div ng-if="!kayanLang || kayanLang == 'en'" style="background-color: #C8972C; min-height: 60vh;" class="container-fluid  mt-5">
+
+
+
+    <div class="row  m-auto">
+      <div class="col-xs-12 col-md-6 p-5">
+        <div class="pt-5">
+          <div class="row pl-5 pt-5">
+
+
+
+            <h2 class=" text-justify text-left  text-white px-5">Rental, Rewards, Receipts
+              and much more ...</h2>
+
+
+          </div>
+          <div class="row pl-5 py-1">
+
+            <p style="font-size: 1.3em;" class="d-block px-5 pb-1 pt-1 text-white">types with a lot of Models, Different
+              types with a lot of Models types with a lot
+              of Models, Different types with a lot of
+              Models </p>
+
+          </div>
+          <div class="row pl-5 py-1">
+
+            <div class="px-5">
+              <p style="font-size: 1.1em;" class="d-block px-5 pb-0 pt-1  text-white">Download KAYAN Apps </p>
+
+            </div>
+          </div>
+          <div class="row pl-5 py-1">
+
+            <a style="width: 150px;" href="https://play.google.com/store/apps/details?id=com.technosaab.kayan" target="_blank" class="ml-5">
+              <img src="http://134.209.178.237/kayanWebsite/images/Google_Play.png" class="img-fluid" alt="">
+            </a>
+            <a style="width: 150px;" href="#" class="ml-1">
+              <img src="http://134.209.178.237/kayanWebsite/images/App_Store.png" class="img-fluid" alt="">
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <img class="text-center m-auto img-fluid" src="http://134.209.178.237/kayanWebsite/images/hand.png" alt="">
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div ng-if="kayanLang == 'ar'" style="background-color: #C8972C; min-height: 60vh;" class="container-fluid  mt-5">
+
+
+
+    <div class="row  m-auto text-right">
+      <div class="col-xs-12 col-md-6 p-5">
+        <div class="pt-5">
+          <div class="row pr-5 pt-5">
+
+
+
+            <h2 class="text-justify text-right  text-white px-5 ">تأجير ، مكافآت ، إيصالات وأكثر من ذلك بكثير ...
+            </h2>
+
+
+          </div>
+          <div class="row pr-5 py-1">
+
+            <p style="font-size: 1.3em;" class="d-block px-5 pb-1 pt-1 text-white">أنواع مع الكثير من النماذج ، أنواع مختلفة مع الكثير من النماذج أنواع مع الكثير من النماذج ، أنواع مختلفة مع الكثير من النماذج </p>
+
+          </div>
+          <div class="row pr-5 py-1">
+
+            <div class="px-5">
+              <p style="font-size: 1.1em;" class="d-block px-5 pb-0 pt-1  text-white">تحميل تطبيقات كيان </p>
+
+            </div>
+          </div>
+          <div class="row pr-5 py-1">
+
+            <a style="width: 150px;" href="https://play.google.com/store/apps/details?id=com.technosaab.kayan"  target="_blank" class="mr-5">
+              <img src="http://134.209.178.237/kayanWebsite/images/Google_Play.png" class="img-fluid" alt="">
+            </a>
+            <a style="width: 150px;" href="#" class="mr-1">
+              <img src="http://134.209.178.237/kayanWebsite/images/App_Store.png" class="img-fluid" alt="">
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <img class="text-center m-auto img-fluid" src="http://134.209.178.237/kayanWebsite/images/hand-.png" alt="">
+
+      </div>
+    </div>
+
+
+
+  </div>
+  <!-- End Kayan App 2 -->
+
+  <!-- Start Footer -->
+
+  <footer>
+    <div class="py-5">
+
+    </div>
+    <div class="py-5">
+
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+  <!-- Optional JavaScript -->
+
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+  
+        // $('#sidebararCollapse').on('click', function () {
+        //   $('#sidebarar').toggleClass('activeSidebarar');
+        // });
+        // $('#sidebararCollapseOut').on('click', function () {
+        //   $('#sidebarar').toggleClass('activeSidebarar');
+        // });
+  
+  
+        // $('#sidebarCollapseOut').on('click', function () {
+        //   $('#sidebar').toggleClass('activeSidebar');
+        // });
+  
+        // $('#sidebarCollapse').on('click', function () {
+        //   $('#sidebar').toggleClass('activeSidebar');
+        // });
+  
+  
+        // $('#loginCollapseOuten').on('click', function () {
+        //   $('.loginCollapseen').toggleClass('activeLoginen');
+          
+        // });
+  
+        // $('#loginCollapseOutar').on('click', function () {
+        
+        //   $('.loginCollapsear').toggleClass('activeLoginar');
+          
+        // });
+  
+  
+        
+  
+      });
+    </script>
+  
+</body>
+
+</html>
